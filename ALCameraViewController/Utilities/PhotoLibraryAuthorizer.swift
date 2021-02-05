@@ -32,7 +32,7 @@ class PhotoLibraryAuthorizer {
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization(handleAuthorization)
             break
-        case .authorized:
+        case .authorized, .limited:
             DispatchQueue.main.async {
                 self.completion(nil)
             }
